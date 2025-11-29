@@ -1,0 +1,22 @@
+# Godot-specific ignores
+
+# Import folder (generated automatically)
+.import/
+
+# Exported builds
+export/
+
+# Mono-specific (if using C#)
+.mono/
+*.csproj
+*.sln
+*.dll
+*.mdb
+*.pdb
+
+# Temporary files
+*.tmp
+*.log
+
+# Godot editor metadata
+.editor_config
