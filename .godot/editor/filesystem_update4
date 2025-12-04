@@ -1,3 +1,7 @@
-res://assets/character_body_2d.tscn
 res://scenes/game.tscn
-res://scripts/player.gd
+res://scenes/platform.tscn
+res://scenes/player.tscn
+res://scenes/coin.tscn
+res://scripts/coin.gd
+res://scripts/killzone.gd
+res://scenes/killzone.tscn
