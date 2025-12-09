@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://b05fnkh01yfm1"]
+[gd_scene load_steps=16 format=3 uid="uid://b05fnkh01yfm1"]
 
+[ext_resource type="Script" uid="uid://cms6bjyc87nmn" path="res://scripts/game_manager.gd" id="1_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://cw3ht8gmifgol" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://bm8n11cbgqcu5" path="res://scripts/player.gd" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dk4mnm7up5djj" path="res://scenes/platform.tscn" id="3_lbhrr"]
@@ -7,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://so8i4pqtde35" path="res://scenes/coin.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://cd6jq84wn63bl" path="res://scenes/killzone.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://gblc6kcocn3q" path="res://scenes/green_slime.tscn" id="7_u5sy4"]
+[ext_resource type="FontFile" uid="uid://dmtrktgjcnxp2" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_vtaks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("3_lnu2h")
@@ -174,6 +176,22 @@ sources/0 = SubResource("TileSetAtlasSource_lbhrr")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u5sy4"]
 
+[sub_resource type="Animation" id="Animation_iywne"]
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(97, -141), Vector2(97, -88)]
+}
+
 [sub_resource type="Animation" id="Animation_lbhrr"]
 resource_name = "movement"
 length = 1.7
@@ -191,22 +209,6 @@ tracks/0/keys = {
 "values": [Vector2(97, -141), Vector2(97, -180)]
 }
 
-[sub_resource type="Animation" id="Animation_iywne"]
-length = 2.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.9666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(97, -141), Vector2(97, -88)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p57ef"]
 _data = {
 &"RESET": SubResource("Animation_iywne"),
@@ -214,6 +216,10 @@ _data = {
 }
 
 [node name="Game" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_0tnpc")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-25, 0)
@@ -232,6 +238,17 @@ script = ExtResource("2_yqjtg")
 position = Vector2(0, 1)
 zoom = Vector2(4, 4)
 limit_bottom = 81
+
+[node name="ScoreLabel" type="Label" parent="Player/Camera2D"]
+unique_name_in_owner = true
+offset_left = -144.0
+offset_top = -80.0
+offset_right = -87.0
+offset_bottom = -68.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_vtaks")
+theme_override_font_sizes/font_size = 8
+text = "Coins: x"
 
 [node name="Killzone" parent="." instance=ExtResource("6_p57ef")]
 position = Vector2(0, 79)
@@ -286,3 +303,15 @@ autoplay = "RESET"
 
 [node name="GreenSlime" parent="Enemys" instance=ExtResource("7_u5sy4")]
 position = Vector2(32, 0)
+
+[node name="Text" type="Node" parent="."]
+
+[node name="Controls" type="Label" parent="Text"]
+offset_left = -200.0
+offset_top = -41.0
+offset_right = -94.0
+offset_bottom = -18.0
+theme_override_fonts/font = ExtResource("9_vtaks")
+theme_override_font_sizes/font_size = 8
+text = "A and D to move
+Space to jump"
