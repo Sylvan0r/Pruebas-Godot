@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://so8i4pqtde35"]
+[gd_scene load_steps=22 format=3 uid="uid://so8i4pqtde35"]
 
 [ext_resource type="Script" uid="uid://bp6kmsx3427cg" path="res://scripts/coin.gd" id="1_i64fm"]
 [ext_resource type="Texture2D" uid="uid://dre8vciebcg8f" path="res://assets/sprites/coin.png" id="1_rwqht"]
 [ext_resource type="AudioStream" uid="uid://bqp5x5xndqxfm" path="res://assets/sounds/coin.wav" id="3_11l1o"]
+[ext_resource type="AudioStream" uid="uid://bg5d3aiy6jgb1" path="res://assets/sounds/tap.wav" id="4_d14el"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i64fm"]
 atlas = ExtResource("1_rwqht")
@@ -218,5 +219,8 @@ bus = &"SFX"
 libraries = {
 &"": SubResource("AnimationLibrary_wnlwo")
 }
+
+[node name="WinSfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_d14el")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
