@@ -1,3 +1,6 @@
+TileMap
+Button
+VBoxContainer
 AnimationPlayer
 AudioStreamPlayer2D
 Node
@@ -9,6 +12,3 @@ RayCast2D
 AnimatedSprite2D
 Timer
 Area2D
-TileMap
-StaticBody2D
-Camera2D

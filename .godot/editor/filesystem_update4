@@ -1,6 +1,4 @@
-res://scenes/icePlataform.tscn
-res://scenes/game.tscn
-res://scripts/game_manager.gd
-res://scenes/killzone.tscn
-res://scripts/killzone.gd
 res://scenes/coin.tscn
+res://scripts/coin.gd
+res://scenes/menu.tscn
+res://scenes/game.tscn
