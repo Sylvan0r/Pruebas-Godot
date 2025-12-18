@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bp6kmsx3427cg" path="res://scripts/coin.gd" id="1_i64fm"]
 [ext_resource type="Texture2D" uid="uid://dre8vciebcg8f" path="res://assets/sprites/coin.png" id="1_rwqht"]
 [ext_resource type="AudioStream" uid="uid://bqp5x5xndqxfm" path="res://assets/sounds/coin.wav" id="3_11l1o"]
-[ext_resource type="AudioStream" uid="uid://bg5d3aiy6jgb1" path="res://assets/sounds/tap.wav" id="4_d14el"]
+[ext_resource type="AudioStream" uid="uid://kjctd6b73ohp" path="res://assets/sounds/power_up.wav" id="4_d14el"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i64fm"]
 atlas = ExtResource("1_rwqht")
@@ -107,14 +107,15 @@ script = ExtResource("1_i64fm")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ls27i")
 autoplay = "default"
-frame = 10
-frame_progress = 0.24987707
+frame = 6
+frame_progress = 0.5032296
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ssuvv")
 
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_11l1o")
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="WinSfx" type="AudioStreamPlayer2D" parent="."]

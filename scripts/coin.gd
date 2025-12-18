@@ -9,6 +9,7 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	# Crear un AudioStreamPlayer2D temporal para reproducir el sonido
 	var sfx = AudioStreamPlayer2D.new()
+	sfx.volume_db = -10
 	sfx.stream = pickup_sound
 	sfx.position = global_position
 	get_tree().current_scene.add_child(sfx)

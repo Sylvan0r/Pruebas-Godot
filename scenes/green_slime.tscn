@@ -1,8 +1,24 @@
-[gd_scene load_steps=10 format=3 uid="uid://gblc6kcocn3q"]
+[gd_scene load_steps=14 format=3 uid="uid://gblc6kcocn3q"]
 
 [ext_resource type="Script" uid="uid://swm0ggn6dgq6" path="res://scripts/green_slime.gd" id="1_0pvn7"]
 [ext_resource type="Texture2D" uid="uid://jw4862y4wek3" path="res://assets/sprites/slime_green.png" id="1_tuic5"]
 [ext_resource type="PackedScene" uid="uid://cd6jq84wn63bl" path="res://scenes/killzone.tscn" id="2_0pvn7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pvn7"]
+atlas = ExtResource("1_tuic5")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4q1p6"]
+atlas = ExtResource("1_tuic5")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl2pm"]
+atlas = ExtResource("1_tuic5")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q800"]
+atlas = ExtResource("1_tuic5")
+region = Rect2(72, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4q1e0"]
 atlas = ExtResource("1_tuic5")
@@ -22,6 +38,23 @@ region = Rect2(72, 24, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4q1p6"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pvn7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4q1p6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl2pm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q800")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4q1e0")
@@ -49,10 +82,9 @@ script = ExtResource("1_0pvn7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_4q1p6")
-animation = &"idle"
+animation = &"Death"
 autoplay = "idle"
-frame = 2
-frame_progress = 0.119065315
+frame_progress = 0.95950985
 
 [node name="Killzone" parent="AnimatedSprite2D" instance=ExtResource("2_0pvn7")]
 
