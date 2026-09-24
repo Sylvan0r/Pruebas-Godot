@@ -1,12 +1,1 @@
-res://scenes/coin.tscn
 res://scenes/game.tscn
-res://scripts/game_manager.gd
-res://scenes/menu.tscn
-res://scripts/green_slime.gd
-res://scenes/green_slime.tscn
-res://scripts/player.gd
-res://scenes/music.tscn
-res://default_bus_layout.tres
-res://scripts/coin.gd
-res://scenes/player.tscn
-res://scenes/winsfx.tscn
