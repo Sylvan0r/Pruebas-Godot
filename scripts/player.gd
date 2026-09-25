@@ -6,17 +6,6 @@ const JUMP_VELOCITY = -300.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var jump: AudioStreamPlayer = $AudioStreamPlayer
 
-# Referencia a tus controles táctiles (Ajusta la ruta si están dentro de la cámara, ej: $Camera2D/TouchscreenControls)
-@onready var touchscreen_controls: CanvasLayer = $Camera2D/TouchscreenControls
-
-func _ready() -> void:
-	# === DETECCIÓN DE ANDROID / MÓVIL ===
-	if OS.has_feature("mobile") or OS.has_feature("android"):
-		touchscreen_controls.visible = true
-	else:
-		# Si estás probando en PC, los oculta automáticamente para que no estorben
-		touchscreen_controls.visible = false
-
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
