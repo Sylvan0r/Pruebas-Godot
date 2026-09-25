@@ -25,7 +25,9 @@ Music="*res://scenes/music.tscn"
 
 [display]
 
+window/size/initial_position_type=0
 window/size/borderless=true
+window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
 [input]
@@ -50,5 +52,6 @@ move_right={
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=3
+textures/canvas_textures/default_texture_filter=0
 textures/vram_compression/import_etc2_astc=true
+anti_aliasing/quality/smaa_edge_detection_threshold=0.01

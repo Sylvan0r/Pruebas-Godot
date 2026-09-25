@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://gblc6kcocn3q" path="res://scenes/green_slime.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://c75fq34hn3vmv" path="res://scenes/icePlataform.tscn" id="9_kvpfn"]
 [ext_resource type="FontFile" uid="uid://dmtrktgjcnxp2" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_vtaks"]
+[ext_resource type="Texture2D" uid="uid://vel7quterc0f" path="res://assets/sprites/left.png" id="11_kvpfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtaks"]
 texture = ExtResource("3_lnu2h")
@@ -356,9 +357,29 @@ position = Vector2(0, 1)
 zoom = Vector2(4, 4)
 limit_bottom = 120
 
+[node name="TouchscreenControls" type="CanvasLayer" parent="Player/Camera2D" unique_id=1863996839]
+
+[node name="Right" type="TouchScreenButton" parent="Player/Camera2D/TouchscreenControls" unique_id=1397761584]
+position = Vector2(-289, 57)
+scale = Vector2(0.161, 0.157)
+texture_normal = ExtResource("11_kvpfn")
+
+[node name="Left" type="TouchScreenButton" parent="Player/Camera2D/TouchscreenControls" unique_id=1878348084]
+position = Vector2(-238, 82.5)
+rotation = 3.1415927
+scale = Vector2(0.157, 0.157)
+texture_normal = ExtResource("11_kvpfn")
+
+[node name="Jump" type="TouchScreenButton" parent="Player/Camera2D/TouchscreenControls" unique_id=1380166130]
+position = Vector2(0, 58)
+rotation = 1.5707964
+scale = Vector2(0.157, 0.157)
+texture_normal = ExtResource("11_kvpfn")
+
 [node name="ScoreLabel" type="Label" parent="Player/Camera2D" unique_id=2045068435]
 unique_name_in_owner = true
 z_index = 1
+texture_filter = 1
 offset_left = -122.0
 offset_top = -76.00001
 offset_right = -86.0

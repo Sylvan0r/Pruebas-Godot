@@ -1,15 +1,14 @@
+TouchScreenButton
+CanvasLayer
+HSlider
+Button
 AudioStreamPlayer
-AudioStreamPlayer2D      - Matches the "sound" keyword.
-AudioStreamPlayer      - Matches the "music" keyword.
 NavigationObstacle2D
 Label
-CanvasLayer
 Node
 AnimationPlayer
 TileMap
-Button
 VBoxContainer
 AudioStreamPlayer2D
 AnimatableBody2D
 CollisionShape2D
-Sprite2D
